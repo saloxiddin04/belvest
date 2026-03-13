@@ -34,7 +34,7 @@ const FAQPage = () => {
 	});
 
 	return (
-		<div className="pt-32 pb-20 min-h-screen bg-gradient-to-b from-gray-50 to-white">
+		<div className="pt-32 pb-20 min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-950 transition-colors duration-300">
 			<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 				{/* Header */}
 				<div className="text-center mb-12">
@@ -43,7 +43,7 @@ const FAQPage = () => {
 							{t('faq.title')}
 						</span>
 					</h1>
-					<p className="text-xl text-gray-600">
+					<p className="text-xl text-gray-600 dark:text-gray-400">
 						{t('faq.subtitle')}
 					</p>
 				</div>
@@ -56,7 +56,7 @@ const FAQPage = () => {
 						placeholder="Поиск вопросов..."
 						value={searchTerm}
 						onChange={(e) => setSearchTerm(e.target.value)}
-						className="w-full pl-12 pr-4 py-4 rounded-xl border border-gray-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 transition-all outline-none shadow-lg"
+						className="w-full pl-12 pr-4 py-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 dark:focus:ring-emerald-800 transition-all outline-none shadow-lg"
 					/>
 				</div>
 
@@ -69,7 +69,7 @@ const FAQPage = () => {
 							className={`px-4 py-2 rounded-lg font-medium transition-all ${
 								activeCategory === category.id
 									? 'bg-emerald-600 text-white shadow-lg'
-									: 'bg-white text-gray-600 hover:bg-gray-100 shadow'
+									: 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 shadow'
 							}`}
 						>
 							{category.name}
@@ -82,15 +82,15 @@ const FAQPage = () => {
 					{filteredQuestions.map((item, index) => (
 						<div
 							key={index}
-							className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all"
+							className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all"
 						>
 							<button
 								onClick={() => toggleItem(index)}
-								className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+								className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
 							>
-								<span className="font-medium text-gray-900 pr-8">{item.q}</span>
+								<span className="font-medium text-gray-900 dark:text-white pr-8">{item.q}</span>
 								{openItems.includes(index) ? (
-									<ChevronUp className="w-5 h-5 text-emerald-600 flex-shrink-0" />
+									<ChevronUp className="w-5 h-5 text-emerald-600 dark:text-emerald-400 flex-shrink-0" />
 								) : (
 									<ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0" />
 								)}
@@ -98,7 +98,7 @@ const FAQPage = () => {
 
 							{openItems.includes(index) && (
 								<div className="px-6 pb-4">
-									<p className="text-gray-600 leading-relaxed">{item.a}</p>
+									<p className="text-gray-600 dark:text-gray-400 leading-relaxed">{item.a}</p>
 								</div>
 							)}
 						</div>

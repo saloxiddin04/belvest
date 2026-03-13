@@ -8,7 +8,7 @@ const TeamPage = () => {
 	const teamMembers = t('team.members');
 
 	return (
-		<div className="pt-32 pb-20 min-h-screen bg-gradient-to-b from-gray-50 to-white">
+		<div className="pt-32 pb-20 min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-950 transition-colors duration-300">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				{/* Header */}
 				<div className="text-center mb-16">
@@ -17,7 +17,7 @@ const TeamPage = () => {
 							{t('team.title')}
 						</span>
 					</h1>
-					<p className="text-xl text-gray-600 max-w-3xl mx-auto">
+					<p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
 						{t('team.subtitle')}
 					</p>
 				</div>
@@ -29,19 +29,19 @@ const TeamPage = () => {
 						{ icon: <Award />, number: '7+', label: t('team.years') },
 						{ icon: <Star />, number: '2100+', label: t('team.deals') }
 					].map((stat, i) => (
-						<div key={i} className="bg-white rounded-2xl p-6 shadow-lg text-center">
-							<div className="bg-emerald-100 text-emerald-600 w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4">
+						<div key={i} className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg text-center">
+							<div className="bg-emerald-100 dark:bg-emerald-900/50 text-emerald-600 dark:text-emerald-400 w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4">
 								{stat.icon}
 							</div>
-							<div className="text-3xl font-bold text-emerald-600 mb-1">{stat.number}</div>
-							<div className="text-gray-600">{stat.label}</div>
+							<div className="text-3xl font-bold text-emerald-600 dark:text-emerald-400 mb-1">{stat.number}</div>
+							<div className="text-gray-600 dark:text-gray-400">{stat.label}</div>
 						</div>
 					))}
 				</div>
 
 				{/* Team Description */}
-				<div className="bg-emerald-50 rounded-3xl p-8 mb-16">
-					<p className="text-lg text-gray-700 leading-relaxed">
+				<div className="bg-emerald-50 dark:bg-emerald-900/20 rounded-3xl p-8 mb-16">
+					<p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
 						{t('team.description')}
 					</p>
 				</div>
@@ -51,7 +51,7 @@ const TeamPage = () => {
 					{teamMembers && teamMembers.map((member, index) => (
 						<div
 							key={index}
-							className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all overflow-hidden"
+							className="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all overflow-hidden"
 						>
 							<div className="relative h-64 overflow-hidden">
 								<div className="absolute inset-0 bg-gradient-to-t from-emerald-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
@@ -65,9 +65,9 @@ const TeamPage = () => {
 								</div>
 							</div>
 							<div className="p-6">
-								<h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
-								<p className="text-emerald-600 font-medium mb-2">{member.position}</p>
-								<div className="flex items-center gap-2 text-sm text-gray-500">
+								<h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">{member.name}</h3>
+								<p className="text-emerald-600 dark:text-emerald-400 font-medium mb-2">{member.position}</p>
+								<div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
 									<Clock className="w-4 h-4" />
 									<span>{member.experience}</span>
 								</div>

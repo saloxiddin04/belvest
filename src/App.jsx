@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { LanguageProvider } from './contexts/LanguageContext';
+import { ThemeProvider } from './contexts/ThemeContext';
 
 // Layout
 import Navbar from './components/Layout/Navbar';
@@ -28,21 +29,23 @@ const HomePage = () => (
 
 function App() {
   return (
-    <LanguageProvider>
-      <Router>
-        <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/team" element={<TeamPage />} />
-            <Route path="/clients" element={<ClientsPage />} />
-            <Route path="/contacts" element={<ContactsPage />} />
-            <Route path="/faq" element={<FAQPage />} />
-          </Routes>
-          <Footer />
-        </div>
-      </Router>
-    </LanguageProvider>
+    <ThemeProvider>
+      <LanguageProvider>
+        <Router>
+          <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-950 transition-colors duration-300">
+            <Navbar />
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/team" element={<TeamPage />} />
+              <Route path="/clients" element={<ClientsPage />} />
+              <Route path="/contacts" element={<ContactsPage />} />
+              <Route path="/faq" element={<FAQPage />} />
+            </Routes>
+            <Footer />
+          </div>
+        </Router>
+      </LanguageProvider>
+    </ThemeProvider>
   );
 }
 

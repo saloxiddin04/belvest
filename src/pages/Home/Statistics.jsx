@@ -23,7 +23,7 @@ const Statistics = () => {
 	];
 
 	return (
-		<section className="py-20 bg-gradient-to-br from-emerald-900 to-emerald-800 text-white">
+		<section className="py-20 bg-gradient-to-br from-emerald-900 to-emerald-800 dark:from-emerald-950 dark:to-emerald-900 text-white transition-colors duration-300">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<h2 className="text-4xl font-bold text-center mb-16">{t('home.statistics.title')}</h2>
 
